@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
+import { Articulo } from './articulo';
 
 @Component({
   selector: 'app-root',
@@ -15,6 +16,23 @@ export class AppComponent {
   email: string = 'rpablo@gmail.com';
   sueldos: number[] = [1700, 1600, 1900];
   activo: boolean = true;
+  articulos: Articulo[] = [
+    {
+      codigo: 1,
+      descripcion: 'naranjas',
+      precio: 540
+    },
+    {
+      codigo: 2,
+      descripcion: 'manzanas',
+      precio: 900
+    },
+    {
+      codigo: 3,
+      descripcion: 'peras',
+      precio: 490
+    }
+  ]
 
   esActivo() :string {
     if (this.activo)
@@ -29,5 +47,9 @@ export class AppComponent {
       suma += this.sueldos[index];
 
     return suma;
+  }
+
+  generarNumero() :number{
+    return Math.floor(Math.random() * 3) +1;
   }
 }

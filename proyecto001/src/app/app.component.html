@@ -1,8 +1,32 @@
 <div>
+  <h1>Empleado</h1>
   <p>Nombre del empleado: {{nombre}}</p>
-  <p>Edad: {{edad}}</p>
-  <p>los últimos tres sueldos son: {{sueldos[0]}}, {{sueldos[1]}}, {{sueldos[2]}}</p>
-  <p>En los últimos tres meses ha ganado {{ultimos3Sueldos()}} Euros</p>
-  <p>{{esActivo()}}</p>
+  @if (edad > 18) {
+    <p>Es mayor de edad.</p>
+  } @else {
+    <p>Es menor de edad.</p>
+  }
+  <h1>Listado de artículos</h1>
+  <table>
+    @for (articulo of articulos; track articulo.codigo) {
+      <tr>
+        <td>{{articulo.codigo}}</td>
+        <td>{{articulo.descripcion}}</td>
+        <td>{{articulo.precio}}</td>
+      </tr>
+    }
+  </table>
+  <h1>Número aleatorio entre 1 y 3</h1>
+  @switch (generarNumero()) {
+    @case (1) {
+      <p>Uno</p>
+    }
+    @case (2) {
+      <p>Dos</p>
+    }
+    @case (3) {
+      <p>Tres</p>
+    }
+  }
 </div>
 
