@@ -35,6 +35,7 @@ export class AppComponent {
   ]
 
   contador: number = 1;
+  nombrePersona: string = '';
 
   esActivo() :string {
     if (this.activo)
@@ -61,5 +62,13 @@ export class AppComponent {
 
   decrementar(): void {
     this.contador--;
+  }
+
+  fijarNombre1() :void {
+    this.nombrePersona = 'Juan';
+  }
+
+  fijarNombre2(): void {
+    this.nombrePersona = 'Ana';
   }
 }

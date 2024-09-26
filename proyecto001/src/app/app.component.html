@@ -30,9 +30,15 @@
   }
 </div>
 
-<div>
+<div style="margin-bottom: 10px;">
   <p>{{contador}}</p>
   <button (click)="incrementar()">Sumar 1</button>
   <button (click)="decrementar()">Sumar 2</button>
+</div>
+
+<div>
+  <input type="button" (click)="fijarNombre1()" value="Juan">
+  <input type="button" (click)="fijarNombre2()" value="Ana">
+  <input type="text" [value] = "nombrePersona">
 </div>
 
