@@ -34,6 +34,8 @@ export class AppComponent {
     }
   ]
 
+  contador: number = 1;
+
   esActivo() :string {
     if (this.activo)
       return 'Trabajador activo';
@@ -51,5 +53,13 @@ export class AppComponent {
 
   generarNumero() :number{
     return Math.floor(Math.random() * 3) +1;
+  }
+
+  incrementar(): void {
+    this.contador++;
+  }
+
+  decrementar(): void {
+    this.contador--;
   }
 }
