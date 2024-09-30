@@ -9,6 +9,7 @@ import { Component, Input } from '@angular/core';
 })
 export class DadoComponent {
 
-  @Input() valor!: string;
+  //@Input() valor!: string   interpolacion sólo acepta tipos string
+  @Input() valor!: number;
 
 }
