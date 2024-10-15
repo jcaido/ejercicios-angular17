@@ -1,0 +1,15 @@
+<p>
+  Actividad: <input type="text" [formControl] = "actividad">
+</p>
+<p><button (click)="agregar()">Agregar</button></p>
+<ol>
+  @for (actividad of actividades; track $index) {
+    <li>
+      {{actividad}}
+      <button (click)="borrar($index)">Borrar</button>
+    </li>
+  }
+</ol>
+<p>
+  <button (click)="borrarTodas()">Borrar todas las actividades</button>
+</p>
