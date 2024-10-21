@@ -1,0 +1,37 @@
+<form [formGroup]="formularioContacto" (ngSubmit)="submit()">
+  	<p>
+      Nombre:
+      <input type="text" formControlName="nombre">
+      @if (formularioContacto.get('nombre')?.errors?.['required']) {
+        <span>(El nombre no puede quedar vacío)</span>
+      }
+      @if (formularioContacto.get('nombre')?.errors?.['minlength']) {
+        <span>(Debe tener como mínimo 10 caracteres)</span>
+      }
+    </p>
+    <p>
+      Mail:
+      <input type="text" formControlName="mail">
+      @if (formularioContacto.get('mail')?.errors?.['required']) {
+        <span>(El email no puede quedar vacío)</span>
+      }
+      @if (formularioContacto.get('mail')?.errors?.['email']) {
+        <span>(El email no es válido)</span>
+      }
+    </p>
+    <p>
+      Mensaje:<br>
+      <textarea rows="10" cols="70" formControlName="mensaje"></textarea>
+      @if (formularioContacto.get('mensaje')?.errors?.['required']) {
+        <span>(El mensaje no puede quedar vacío)</span>
+      }
+      @if (formularioContacto.get('mensaje')?.errors?.['maxlength']) {
+        <span>(Debe tener como máximo 500 caracteres)</span>
+      }
+    </p>
+    <button type="submit">Confirmar</button>
+</form>
+
+<div>
+  {{resultado}}
+</div>
