@@ -1,0 +1,16 @@
+<table>
+  <tr>
+    <td>Date</td>
+    <td>States</td>
+    <td>Positive</td>
+    <td>Negative</td>
+  </tr>
+  @for (dato of datosCovid; track $index) {
+    <tr>
+      <td>{{dato.date}}</td>
+      <td>{{dato.states}}</td>
+      <td>{{dato.positive}}</td>
+      <td>{{dato.negative}}</td>
+    </tr>
+  }
+</table>
