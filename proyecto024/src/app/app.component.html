@@ -1,0 +1,24 @@
+<h1>Número en castellano</h1>
+<ul>
+  @for (valor of vector; track valor) {
+    <li>
+      {{valor | letras}}
+    </li>
+  }
+</ul>
+<h1>Número en inglés</h1>
+<ul>
+  @for (valor of vector; track valor) {
+    <li>
+      {{valor | letras:'ingles'}}
+    </li>
+  }
+</ul>
+<h1>Número en portugués</h1>
+<ul>
+  @for (valor of vector; track valor) {
+    <li>
+      {{valor | letras:'portugues'}}
+    </li>
+  }
+</ul>
