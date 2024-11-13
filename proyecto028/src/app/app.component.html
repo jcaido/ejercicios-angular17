@@ -1,0 +1,8 @@
+@for (numero of numeros; track numero) {
+  @defer(on viewport) {
+    <app-tablamultiplicacion [tabla] = "numero"></app-tablamultiplicacion>
+  }
+  @placeholder {
+    <p>Esperando la tabla del {{numero}}</p>
+  }
+}
