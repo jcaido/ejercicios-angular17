@@ -1,0 +1,7 @@
+<p>¿Quién descubrió América</p>
+<input type="button" (click) = "visible = true" value="mostrar respuesta">
+@defer(when visible) {
+  <p>Respuesta: Cristóbal Colón</p>
+} @placeholder {
+  <p>¿?</p>
+}
