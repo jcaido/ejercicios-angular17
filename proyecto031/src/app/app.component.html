@@ -1,0 +1,15 @@
+<h1 [ngStyle]="{'color': 'red', 'background-color': '#ff0', 'text-align': 'center'}">Sitio fuera de servicio</h1>
+<h1 [ngStyle]="{'color': colorEstado}">Sitio fuera de servicio</h1>
+<h1 [ngStyle]="{'color': retornarcolor()}">Sitio fuera de servicio</h1>
+
+<table>
+  @for (elemento of [1, 2, 3, 4, 5]; track $index) {
+    <tr>
+      <td [ngStyle]="{'background-color': elemento%2 == 0 ? 'red' : 'yellow'}">{{elemento}}</td>
+    </tr>
+  }
+</table>
+
+@for (elemento of [10, 12, 14, 20,30]; track $index) {
+  <p [ngStyle]="{'font-size.px': elemento}">Tamaño de fuente en píxeles: {{elemento}}</p>
+}
