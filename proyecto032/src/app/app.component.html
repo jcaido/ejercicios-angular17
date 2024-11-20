@@ -1,0 +1,12 @@
+<p [ngClass]="'clase1 clase2'">Prueba de directiva ngClass</p>
+<p [ngClass]="{'clase1':estado1, 'clase2':estado2}">Prueba de directiva ngClass</p>
+<table>
+  @for (elemento of [1, 2, 3, 4, 5]; track $index) {
+    <tr>
+      <td [ngClass]="{'color1':elemento%2==0, 'color2':elemento%2==1}">{{elemento}}</td>
+    </tr>
+  }
+</table>
+<p [ngClass]="forma">Prueba de directiva</p>
+<button (click)="fijar()">Fijar clases</button>
+<button (click)="eliminar()">Eliminar clases</button>
