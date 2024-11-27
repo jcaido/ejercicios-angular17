@@ -1,0 +1,35 @@
+<div>
+  <h1>Administración de sitios web</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>URL</th>
+        <th>Descripción</th>
+        <th>Borrar</th>
+        <th>Seleccionar</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (sitio of sitios; track sitio.url) {
+        <tr>
+          <td><a href="https://www.{{sitio.url}}" target="_blank">{{sitio.url}}</a></td>
+          <td>{{sitio.description }}</td>
+          <td><button (click)="borrar(sitio.url)">Borrar?</button></td>
+          <td><button (click)="seleccionar(sitio)">Seleccionar</button></td>
+        </tr>
+      } @empty {
+        <tr>
+          <td colspan="4">No hay sitios</td>
+        </tr>
+      }
+    </tbody>
+  </table>
+  <div>
+    <p>URL:<input type="text" [(ngModel)] = "sitio.url"></p>
+    <p>Descripcion<input type="text" [(ngModel)] = "sitio.description"></p>
+    <p>
+      <button (click)="agregar()">Agregar</button>
+      <button (click)="modificar()">Modificar</button>
+    </p>
+  </div>
+</div>
